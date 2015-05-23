@@ -40,7 +40,7 @@
         this.$get= function dbServiceFactory(){ return new _storageFactory('sessionStorage');  }
       })
 
-    .provider('localStorageProvider', function sessionStorageProvider() {
+    .provider('localStorageProvider', function localStorageProvider() {
         this.$get= function dbServiceFactory(){ return new _storageFactory('localStorage');  }
       });
 
