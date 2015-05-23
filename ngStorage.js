@@ -36,12 +36,12 @@
 
     .factory('$sessionStorage', _storageFactory('sessionStorage'))
 
-    .provider('sessionStorageProvider', function sessionStorageProvider() {
-        this.$get= function dbServiceFactory(){ return new _storageFactory('sessionStorage');  }
+    .provider('sessionStorage', function sessionStorageProvider() {
+        this.$get= function sessionStorageFactory(){ return new _storageFactory('sessionStorage');  }
       })
 
-    .provider('localStorageProvider', function localStorageProvider() {
-        this.$get= function dbServiceFactory(){ return new _storageFactory('localStorage');  }
+    .provider('localStorage', function localStorageProvider() {
+        this.$get= function localStorageFactory(){ return new _storageFactory('localStorage');  }
       });
 
     function _storageFactory(storageType) {
