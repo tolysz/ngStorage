@@ -34,7 +34,15 @@
      * @requires $window
      */
 
-    .factory('$sessionStorage', _storageFactory('sessionStorage'));
+    .factory('$sessionStorage', _storageFactory('sessionStorage'))
+
+    .provider('sessionStorageProvider', function sessionStorageProvider() {
+        this.$get= function dbServiceFactory(){ return new _storageFactory('sessionStorage');  }
+      })
+
+    .provider('localStorageProvider', function sessionStorageProvider() {
+        this.$get= function dbServiceFactory(){ return new _storageFactory('localStorage');  }
+      });
 
     function _storageFactory(storageType) {
         return [
